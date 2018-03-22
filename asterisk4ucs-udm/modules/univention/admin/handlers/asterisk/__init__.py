@@ -522,7 +522,9 @@ def genExtensionsconf(co, lo, srv):
 
 	conf += "\n\n; ===== Nummernkreise =====\n\n"
 	for extnum in llist(srv.info.get("extnums", [])):
-		conf += "exten => _%s,1,Goto(default,%s,1)\n" % (
+		conf += "exten => _%s,1,GotoIf(${DB_EXISTS(blacklist/${CALLERID(num)})}?blacklisted,s,1)\n" % (
+			extnum)
+		conf += "exten => _%s,2,Goto(default,%s,1)\n" % (
 			extnum, srv.info.get("defaultext", "fubar"))
 		conf += "exten => _%s.,1,Goto(default,${EXTEN:%i},1)\n" % (
 			extnum, len(extnum))
