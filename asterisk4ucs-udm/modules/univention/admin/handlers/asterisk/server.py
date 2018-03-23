@@ -110,7 +110,7 @@ property_descriptions = {
 	"sshmohpath": univention.admin.property(
 		short_description="Asterisk-Warteschlangenmusikpfad auf Zielhost",
 		syntax=univention.admin.syntax.string,
-		default="/opt/asterisk4ucs/moh",
+		default="/var/lib/asterisk/moh",
 		required=True,
 	),
 	"sshagipath": univention.admin.property(
