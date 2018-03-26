@@ -8,7 +8,7 @@ build instructions
 
 3. obtain source code from github
 
-		git clone git@github.com:decoit/asterisk4ucs.git
+		git clone https://github.com/hermanthegerman2/asterisk4ucs.git
 
 4. make changes 
 5. create new versions in each modules with
