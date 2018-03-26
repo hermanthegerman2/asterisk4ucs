@@ -20,14 +20,14 @@ build instructions
 		./buildall
 7. create release directory
 
-		mkdir release/asterisk4ucs-1.0.7 
+		mkdir release/asterisk4ucs-1.1.0
 8. copy all debian packages to release directory
 
-		cp *.deb release/asterisk4ucs-1.0.7
+		cp *.deb release/asterisk4ucs-1.1.0
 9. enter release directory
 
 		cd release
 10. execute release-script
 
-		./release 1.0.7
+		./release 1.1.0
 
