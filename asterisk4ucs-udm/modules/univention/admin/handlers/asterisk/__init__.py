@@ -528,6 +528,13 @@ def genExtensionsconf(co, lo, srv):
 			extnum, srv.info.get("defaultext", "fubar"))
 		conf += "exten => _%s.,1,Goto(default,${EXTEN:%i},1)\n" % (
 			extnum, len(extnum))
+	
+	conf += "\n[blacklisted]\n\n"
+		
+	conf += "exten => s,1,Answer\n"
+	conf += "exten => s,2,Wait(2)\n"
+	conf += "exten => s,3,Playback(nbdy-avail-to-take-call)\n"
+	conf += "exten => s,4,Hangup\n"
 
 	return conf
 
